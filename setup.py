@@ -16,17 +16,13 @@ AUTHOR = 'Frédéric Auchère'
 REQUIRES_PYTHON = '>=3.6.0'
 VERSION = '0.0.1'
 
-REQUIRED = [
-    'scipy',
-    'numpy',
-    'numexpr',
-    'opencv-python'
-]
-
 # If you do change the License, remember to change the Trove Classifier for that!
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
+
+with open('requirements.txt', 'r') as f:
+    requirements = f.read().strip('\n').split('\n')
 
 setup(
     name=NAME,
@@ -38,7 +34,7 @@ setup(
     author_email=EMAIL,
     python_requires=REQUIRES_PYTHON,
     url=URL,
-    install_requires=REQUIRED,
+    install_requires=requirements,
     license='LGPL-v3',
     classifiers=[
         # Trove classifiers
